@@ -19,5 +19,30 @@ window.addEventListener('load', () => {
             }, 600);
         }, 50);
 
-    }, 2700);
+    }, 3500);
 });
+
+// --- フィルター機能の処理 ---
+function filterWorks(category) {
+    // 1. フィルターボタンの見た目（アクティブ状態）を更新
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+        // クリックされたボタンをアクティブにする
+        if (btn.getAttribute('onclick').includes(category)) {
+            btn.classList.add('active');
+        }
+    });
+
+    // 2. 作品カードの表示/非表示を切り替え
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'flex'; // 表示する
+        } else {
+            card.style.display = 'none'; // 隠す
+        }
+    });
+
+
+}
