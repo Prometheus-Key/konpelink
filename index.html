@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dot cube アーカイブ</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="loader">
         <div class="water-horizon"></div>
@@ -17,7 +19,7 @@
         <div class="travel-path">
             <div class="cube-wrapper">
                 <div class="cube-3d">
-                    <div class="face front"></div>
+                    <div class="face front">dot<br>cube</div>
                     <div class="face back"></div>
                     <div class="face right"></div>
                     <div class="face left"></div>
@@ -25,7 +27,7 @@
                     <div class="face bottom"></div>
                 </div>
                 <div class="cube-3d reflection">
-                    <div class="face front"></div>
+                    <div class="face front">dot<br>cube</div>
                     <div class="face back"></div>
                     <div class="face right"></div>
                     <div class="face left"></div>
@@ -42,30 +44,47 @@
                 <img src="シンボルマーク_透明.png" alt="Icon" class="header-icon">
                 <img src="dotcube_alpha.png" alt="dot cube" class="header-text-logo">
             </div>
-            <p>Creaters Parade Kyushu 出展作品一覧</p>
+            <p>
+                <span class="ja-text">Creaters Parade 九州 出展作品一覧</span>
+            </p>
         </header>
 
         <main>
-            <div class="card">
-                <div class="card-image-placeholder">
-                    [スクリーンショット画像]
-                </div>
-                <div class="card-content">
-                    <h2>作品タイトル</h2>
-                    <div class="tags">
-                        <span>#アクション</span> <span>#Unity</span>
-                    </div>
-                    <p>ここにはゲームの簡単な説明や、コンペでのアピールポイント、操作感などを記載します。</p>
-                    <button>プレイする / 詳細を見る</button>
-                </div>
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterWorks('all')">ALL</button>
+                <button class="filter-btn" onclick="filterWorks('game')">GAME</button>
+                <button class="filter-btn" onclick="filterWorks('music')">MUSIC</button>
+                <button class="filter-btn" onclick="filterWorks('illust')">Illustration</button>
+                <button class="filter-btn" onclick="filterWorks('web')">WEB</button>
+            </div>
+
+            <div class="grid" id="works-grid">
             </div>
         </main>
 
         <footer>
             &copy; 2026 dot cube. All rights reserved.
         </footer>
+
+        <div class="fab-container">
+            <button class="fab-main">＋</button>
+            <div class="fab-menu">
+                <button class="fab-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                    title="トップへ戻る">↑</button>
+
+                <button class="fab-btn" onclick="window.open('https://instagram.com/dotcube_m', '_blank')"
+                    title="Instagram">📷</button>
+                <button class="fab-btn" onclick="window.open('https://x.com/m_dotcube', '_blank')"
+                    title="X (Twitter)">X</button>
+                <button class="fab-btn" onclick="location.href='mailto:dotcubecrafter@gmail.com'"
+                    title="Mail">✉</button>
+                <button class="fab-btn" onclick="window.open('https://github.com/dot-cube', '_blank')"
+                    title="GitHub">Git</button>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
