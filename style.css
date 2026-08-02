@@ -17,6 +17,7 @@ body {
     --accent-yellow: #fff100;
     --accent-blue: #00a0e9;
     --text-main: #333;
+    --accent-green: #00b06b;
 }
 
 /* --- オープニング (Loader) --- */
@@ -333,6 +334,10 @@ main {
     border-bottom-color: var(--accent-red);
 }
 
+.filter-btn[onclick*="'web'"].active {
+    border-bottom-color: var(--accent-green);
+}
+
 /* --- 作品グリッド --- */
 .grid {
     display: grid;
@@ -393,6 +398,14 @@ main {
     background: #fff;
 }
 
+.card.web .thumb {
+    border: 4px solid var(--text-main);
+    border-top: 20px solid var(--text-main);
+    /* 上だけ太くしてブラウザのバー風に */
+    border-radius: 6px;
+    background: #fff;
+}
+
 .card-content {
     padding: 0 20px 24px 20px;
     display: flex;
@@ -423,6 +436,10 @@ main {
 
 .card.illust .tags {
     color: var(--accent-red);
+}
+
+.card.web .tags {
+    color: var(--accent-green);
 }
 
 .card-content p {
@@ -457,6 +474,10 @@ main {
 
 .btn-illust:hover {
     background-color: var(--accent-red);
+}
+
+.btn-web:hover {
+    background-color: var(--accent-green);
 }
 
 footer {
