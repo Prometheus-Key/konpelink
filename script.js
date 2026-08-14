@@ -169,6 +169,16 @@ const worksData = [
         link: "https://unityroom.com/games/avoidballkuro13",
         btnText: "Play"
     },
+    {
+        type: "game",
+        titleJa: "直下掘りには夢がある！",
+        titleEn: "直下掘りには夢がある！",
+        authorJa: "CK",
+        category: "GAME",
+        thumbText: "Game Screen",
+        link: "https://unityroom.com/games/tyokka-yume",
+        btnText: "Play"
+    },
 
     {
         type: "web",                  // さっきCSSで作った「web」を指定
