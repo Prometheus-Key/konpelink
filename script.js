@@ -55,7 +55,6 @@ const worksData = [
         authorJa: "VR制作班",             // 作者（日本語）
         category: "GAME",             // タグの文字
         thumbText: "Game Screen",     // サムネイルの仮文字
-        imagePath: "neon.png",
         link: "https://unityroom.com/games/neon-overdrive",  // リンク先のURL
         btnText: "Play"               // ボタンの文字
     },
