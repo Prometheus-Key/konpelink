@@ -182,7 +182,7 @@ const worksData = [
         type: "game",
         titleJa: "丘の下株式会社",
         titleEn: "丘の下株式会社",
-        authorJa: "≒幽霊部員",
+        authorJa: "幽霊部員",
         category: "GAME",
         thumbText: "Game Screen",
         link: "https://ngo855.github.io/arg-game",
