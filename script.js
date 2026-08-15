@@ -55,16 +55,18 @@ const worksData = [
         authorJa: "VR制作班",             // 作者（日本語）
         category: "GAME",             // タグの文字
         thumbText: "Game Screen",     // サムネイルの仮文字
+        imagePath: "neon.png",        // サムネイル画像
         link: "https://unityroom.com/games/neon-overdrive",  // リンク先のURL
         btnText: "Play"               // ボタンの文字
     },
     {
         type: "game",
         titleJa: "パズルゲーム",
-        titleEn: "Electro Tune",
+        titleEn: "パズルゲーム",
         authorJa: "ぜっつー",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "puzzle.png",
         link: "https://unityroom.com/games/puzzlegame183457",
         btnText: "Play"
     },
@@ -75,6 +77,7 @@ const worksData = [
         authorJa: "I love 弾幕",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "vilgam.png",
         link: "https://unityroom.com/games/vilgam_kakkou",
         btnText: "Play"
     },
@@ -85,6 +88,7 @@ const worksData = [
         authorJa: "紅茶",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "airlitle.png",
         link: "https://unityroom.com/games/etlialseker",
         btnText: "Play"
     },
@@ -95,6 +99,7 @@ const worksData = [
         authorJa: "coumarou",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "shoot.png",
         link: "https://unityroom.com/games/famas1219",
         btnText: "Play"
     },
@@ -105,6 +110,7 @@ const worksData = [
         authorJa: "脱出ゲーム班",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "escape.png",
         link: "https://unityroom.com/games/dassyutu_nazotoki",
         btnText: "Play"
     },
@@ -115,6 +121,7 @@ const worksData = [
         authorJa: "ハシグチ組",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "shooting.png",
         link: "https://unityroom.com/games/3dshooting-game",
         btnText: "Play"
     },
@@ -125,6 +132,7 @@ const worksData = [
         authorJa: "ちょむすけ親衛隊",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "tanni.png",
         link: "https://unityroom.com/games/tani-ga-tarinai",
         btnText: "Play"
     },
@@ -135,6 +143,7 @@ const worksData = [
         authorJa: "SKYFISH",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "shot.png",
         link: "https://unityroom.com/games/hamada-the-shooting-game",
         btnText: "Play"
     },
@@ -145,6 +154,7 @@ const worksData = [
         authorJa: "弾幕ゲーム制作",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "boss.png",
         link: "https://unityroom.com/games/spacebullet",
         btnText: "Play"
     },
@@ -155,6 +165,7 @@ const worksData = [
         authorJa: "konpemario",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "blackmere.png",
         link: "https://unityroom.com/games/konpe-mario-1427",
         btnText: "Play"
     },
@@ -165,6 +176,7 @@ const worksData = [
         authorJa: "ball",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "ballyoke.png",
         link: "https://unityroom.com/games/avoidballkuro13",
         btnText: "Play"
     },
@@ -175,6 +187,7 @@ const worksData = [
         authorJa: "CK",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "click.png",
         link: "https://unityroom.com/games/tyokka-yume",
         btnText: "Play"
     },
@@ -185,6 +198,7 @@ const worksData = [
         authorJa: "幽霊部員",
         category: "GAME",
         thumbText: "Game Screen",
+        imagePath: "web.png",
         link: "https://ngo855.github.io/arg-game",
         btnText: "Play"
     },
@@ -197,6 +211,7 @@ const worksData = [
         authorEn: "Web Team",
         category: "WEB",
         thumbText: "Browser Screen",
+        imagePath: "homepage.png",
         link: "https://dot-cube.github.io/", // 実際のWebサイトのURL
         btnText: "Visit"
     }
@@ -209,11 +224,15 @@ function renderWorks() {
     const grid = document.getElementById('works-grid');
     let htmlString = '';
 
-    // 作品リストを1つずつ順番に処理してHTMLの文字列を作る
     worksData.forEach(work => {
+        // ★ 画像のパスがあれば<img>タグを、なければ文字（thumbText）をセットする
+        const thumbContent = work.imagePath
+            ? `<img src="${work.imagePath}" alt="${work.titleJa}" class="thumb-img">`
+            : work.thumbText;
+
         htmlString += `
         <div class="card ${work.type}">
-            <div class="thumb">${work.thumbText}</div>
+            <div class="thumb">${thumbContent}</div>
             <div class="card-content">
                 <h2>
                     <span class="ja-text">${work.titleJa}</span>
@@ -228,7 +247,6 @@ function renderWorks() {
         `;
     });
 
-    // 出来上がったHTMLを、空の箱（grid）に流し込む
     grid.innerHTML = htmlString;
 }
 
