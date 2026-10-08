@@ -208,9 +208,9 @@ const worksData = [
         titleJa: "FridgeChefAI",
         titleEn: "FridgeChefAI",
         authorJa: "チーム冷蔵庫",
-        category: "GAME",
+        category: "WEB",
         thumbText: "Game Screen",
-        imagePath: "",
+        imagePath: "AI.png",
         link: "https://macbook-mania.github.io/ref1/",
         btnText: "Play"
     },
