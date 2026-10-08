@@ -204,10 +204,10 @@ const worksData = [
     },
 
     {
-        type: "game",
-        titleJa: "EEESCAPE",
-        titleEn: "EEESCAPE",
-        authorJa: "葛根湯信者",
+        type: "web",
+        titleJa: "FridgeChefAI",
+        titleEn: "FridgeChefAI",
+        authorJa: "チーム冷蔵庫",
         category: "GAME",
         thumbText: "Game Screen",
         imagePath: "",
